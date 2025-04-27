@@ -8,10 +8,11 @@ class Program
         Console.WriteLine("Here we'll take your number grade and tell you what letter grade you recieved, and if you passed. \n");
 
         // Determining the letter grade
-        Console.WriteLine("What was your grade? %");
+        Console.Write("What was your grade? %");
         string userInput = Console.ReadLine();
         int gradePercent = int.Parse(userInput);
         string letterGrade = "";
+        string gradeSign = "";
 
         if(gradePercent >= 90)
         {
@@ -44,13 +45,29 @@ class Program
             letterGrade = "F";
         }
 
-        // Determine if the user passed
+        // Determine the sign of the grade
+        if(gradePercent >=70)
+        {
+            if(gradePercent % 10 == 7 && gradePercent < 90)
+            {
+                gradeSign = "+";
+            }
+            else if(gradePercent % 10 == 3)
+            {
+                gradeSign = "-";
+            }
+            else
+            {
+                // Do Nothing
+            }
+        }
 
-        Console.WriteLine($"Your Grade was an {letterGrade}.");
+        // Determine if the user passed
+        Console.WriteLine($"Your Grade was an {letterGrade}{gradeSign}.");
 
         if(gradePercent >= 70)
         {
-            Console.WriteLine("You Passed! Good Job!");
+            Console.WriteLine("You Passed! Good Job!\n");
         }
         else
         {
