@@ -25,6 +25,6 @@ class Program
             Console.WriteLine($"Bos is cool: {i}");
         }
         // Testing using terminal for commits
-    
+        // Testing using GitHub Desktop for commits
     }
 }
