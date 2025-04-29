@@ -24,5 +24,7 @@ class Program
         {
             Console.WriteLine($"Bos is cool: {i}");
         }
+        // Testing using terminal for commits
+    
     }
 }
