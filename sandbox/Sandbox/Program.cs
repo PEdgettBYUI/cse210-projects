@@ -22,7 +22,7 @@ class Program
         // for(int i = countDown; i < x; i++)
         for(int i = 0; i < x; i++)
         {
-            Console.WriteLine($"Bos is cool: {i}");
+            Console.WriteLine($"Boss is cool: {i}");
         }
         // Testing using terminal for commits
         // Testing using GitHub Desktop for commits
