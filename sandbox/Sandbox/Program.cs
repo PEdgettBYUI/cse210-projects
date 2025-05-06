@@ -123,7 +123,7 @@ class Program
 //     } 
 //     while(!done);
     
-// // NEW THING HERE
+// // Class Demo (Circle Class)
 
         Console.WriteLine("Bonjour cevu plait?");
         
@@ -134,6 +134,13 @@ class Program
         // myCircle._radius = 10;
         Console.WriteLine($"{myCircle.GetRadius()}");
         Console.WriteLine($"{myCircle.GetArea()}");
+
+
+        myCircle2.SetRadius(10);
+        // myCircle._radius = 10;
+        Console.WriteLine($"{myCircle2.GetRadius()}");
+        Console.WriteLine($"{myCircle2.GetArea()}");
+
 
 
 
