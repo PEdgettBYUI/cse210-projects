@@ -5,7 +5,7 @@
 
 class Cylinder
 {
-    private Circle _circle;
+    private Circle _circle; // We can make member variables of other custom classes
 
     private double _height;
 
