@@ -4,37 +4,7 @@
 // using System.Security.Cryptography.X509Certificates;
 
 
-// Classes cannot be defined in Main; must be external to the program
-// Private means the variable cannot be accessed outside of the class
-// Public means that it can be accessed from outside of the class
-// i.e. you can use Circle.SetRadius() & Circle.GetRadius(), but you can't access "private double _radius;" directly
 using System.Dynamic;
-
-class Circle
-{
-    private double _radius; // attribute
-
-    public void SetRadius(double radius)
-    {
-        int bob = 9;    // This is a local variable, not an attribute of the class
-        if(radius <0)
-        {
-            Console.WriteLine("Error");
-            return;
-        }
-        _radius = radius;
-    }
-
-    public double GetRadius()
-    {
-        return _radius;
-    }
-
-    public double GetArea()
-    {
-        return Math.PI * _radius * _radius;
-    }
-}
 
 
 class Program
@@ -140,6 +110,11 @@ class Program
         // myCircle._radius = 10;
         Console.WriteLine($"{myCircle2.GetRadius()}");
         Console.WriteLine($"{myCircle2.GetArea()}");
+
+        Cylinder myClyinder = new Cylinder();
+        myClyinder.SetCircle(myCircle);
+        myClyinder.SetHeight(10);
+        Console.WriteLine($"{myClyinder.GetVolume()}");
 
 
 
