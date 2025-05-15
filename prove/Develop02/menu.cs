@@ -1,15 +1,12 @@
 using System;
 class Menu
 {
-    private int userChoice;
-
-    private void displayMenu()
+    public void displayMenu()
     {
-        Console.WriteLine("Welcome to YourJourn, your personal Journalling Program.\n");
         Console.WriteLine("      Menu\n1.Create New Entry\n2.Load Journal Entry\n3.Display Current Journal\n4.Save Current Journal\n5.Save Entry & Exit\n");
     }
 
-    private void parseUserChoice(int choice)
+    public void parseUserChoice(int choice)
     {
         switch (choice)
         {

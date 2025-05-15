@@ -4,6 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        // Initialize classes
+        Menu mainMenu = new Menu();
+
+
+        // Introduction to the program
+        Console.WriteLine("Welcome to YourJourn, your personal Journaling Program.\n");
+
+
+
+        mainMenu.displayMenu();
+
+
     }
 }
