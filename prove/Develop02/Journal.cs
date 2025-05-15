@@ -5,10 +5,26 @@ class Journal
     private List<string> Entries = new List<string>();
 
 
-    public void SaveEntry()
+    public Entry CreateNewEntry()
+    {
+        Entry activeEntry = new Entry();
+        activeEntry.setEDate();
+        activeEntry.dailyPrompt();
+        activeEntry.recordResponse();
+        return activeEntry;
+    }
+    public void SaveEntry(string filename)
     {
         // Saves the current entry into the list of entries
         // Takes Entry (obj.) and takes {date}#{prompt}#{response} as a single string and adds it to the Journal's .txt file.
+
+        using (StreamWriter outputfile = new StreamWriter(filename))
+        {
+            foreach (Entry entry in entries)
+            {
+                outputfile.WriteLine(entry.formEntryLine());
+            }
+        }
     }
 
     public void LoadJournal(string filename)
