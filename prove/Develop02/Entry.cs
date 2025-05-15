@@ -1,10 +1,19 @@
 class Entry
 {
-    private string e_date;
-    private string e_prompt;
-    private string e_response;
+    private string _date;
+    private string _prompt;
+    private string _response;
 
 
+// Used in conjunction with Journal.LoadJournal. Creates a new Entry with all the variables completed.
+    public void ConstructEntry(string e_date, string e_prompt, string e_response)
+    {
+        _date = e_date;
+        _prompt = e_prompt;
+        _response = e_response;
+    }
+
+// List of Prompts. Add or remove items from it to expand possible prompts.
     private List<string> prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
@@ -18,37 +27,41 @@ class Entry
         "Did you see anyone interesting today?"
     };
 
-    public void setEDate()
+// Sets the Date for the current entry
+    public void setDate()
     {
         DateTime currentDate = DateTime.Now;    // retrieves in format (y/m/d)
         string dateAsString = currentDate.ToString("MMMM dd, yyyy");
-        e_date = dateAsString;
+        _date = dateAsString;
     }
 
+// Retrieves a prompt from the list of Prompts
     public void dailyPrompt()
     {
         Random randomQuestion = new Random();
         string chosenPrompt = prompts[randomQuestion.Next(prompts.Count)];
-        e_prompt = chosenPrompt;
+        _prompt = chosenPrompt;
         // Console.WriteLine(chosenPrompt);
     }
 
+// Where the User records their Entry Response
     public void recordResponse()
     {
-        e_response = Console.ReadLine();
+        _response = Console.ReadLine();
     }
 
+//Turns the variables in a given Entry into a string with the format $"({_date}#{_prompt}#{_response})"
     public string formEntryLine()
     {
         string outputString = "";
-        outputString = $"({e_date}#{e_prompt}#{e_response})";
+        outputString = $"({_date}#{_prompt}#{_response})";
         Console.WriteLine(outputString);
         return outputString;
     }
 
     // public void showDate()
     // {
-    //     Console.WriteLine(e_date);
+    //     Console.WriteLine(_date);
     // }
 
 }
