@@ -6,6 +6,14 @@ class Journal
     private List<Entry> Entries = new List<Entry>();
 
 
+    // Create a new Entry and Add it to list<>Entries
+    public void CreateAndAddEntry()
+    {
+        Entry newEntry = new Entry();   // Create a new Entry object
+        newEntry.NewEntry();            // Fill in the entry (date, prompt, response)
+        AddEntry(newEntry);             // Add it to the Entries list
+    }
+
     public void AddEntry(Entry entry)
     {
         Entries.Add(entry);
@@ -19,7 +27,7 @@ class Journal
         {
             foreach (Entry entry in entries)
             {
-                outputfile.WriteLine(entry.formEntryLine());
+                outputfile.WriteLine(entry.convertEntryString());
             }
         }
     }
@@ -38,14 +46,25 @@ class Journal
             string entryText = parts[2];
 
             Entry entry = new Entry();
-            entry.ConstructEntry(date, question, entryText);
+            entry.EntryFromFile(date, question, entryText);
             this.AddEntry(entry);
         }
     }
 
+    // Displays all entries in the current Journal
     public void DisplayJournal()
     {
-        // Displays all entries in the Entries List when left blank
-        // OR shows the contents of a specific journal entry
+        foreach (Entry item in Entries)
+        {
+            string EntryString = item.convertEntryString();
+            Console.WriteLine(EntryString.Replace('#', '\n'));
+            Console.WriteLine();
+            // Displays all entries in the Entries List when left blank
+            // OR shows the contents of a specific journal entry
+        }
+        Console.WriteLine($"--Total Entries: {Entries.Count}--\n");
+        // Wait for User Input before Continuing
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();  //NOTE: Waits for input before continuing if BLANK
     }
 }

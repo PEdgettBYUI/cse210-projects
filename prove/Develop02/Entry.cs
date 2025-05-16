@@ -6,11 +6,23 @@ class Entry
 
 
 // Used in conjunction with Journal.LoadJournal. Creates a new Entry with all the variables completed.
-    public void ConstructEntry(string e_date, string e_prompt, string e_response)
+    public void EntryFromFile(string e_date, string e_prompt, string e_response)
     {
         _date = e_date;
         _prompt = e_prompt;
         _response = e_response;
+    }
+
+// Sets the current Date, Gets a New Prompt, and prompts the user to record their thoughts
+// ?Redundant? 
+    public void NewEntry()
+    {
+        setDate();
+        setPrompt();
+
+        Console.WriteLine(_date);
+        Console.WriteLine(_prompt);
+        recordResponse();
     }
 
 // List of Prompts. Add or remove items from it to expand possible prompts.
@@ -36,7 +48,7 @@ class Entry
     }
 
 // Retrieves a prompt from the list of Prompts
-    public void dailyPrompt()
+    public void setPrompt()
     {
         Random randomQuestion = new Random();
         string chosenPrompt = prompts[randomQuestion.Next(prompts.Count)];
@@ -44,24 +56,18 @@ class Entry
         // Console.WriteLine(chosenPrompt);
     }
 
-// Where the User records their Entry Response
+    // Where the User records their Entry Response
     public void recordResponse()
     {
         _response = Console.ReadLine();
     }
 
 //Turns the variables in a given Entry into a string with the format $"({_date}#{_prompt}#{_response})"
-    public string formEntryLine()
+    public string convertEntryString()
     {
         string outputString = "";
-        outputString = $"({_date}#{_prompt}#{_response})";
-        Console.WriteLine(outputString);
+        outputString = $"{_date}#{_prompt}#{_response}";
+        // Console.WriteLine(outputString);  // For Testing Only
         return outputString;
     }
-
-    // public void showDate()
-    // {
-    //     Console.WriteLine(_date);
-    // }
-
 }
