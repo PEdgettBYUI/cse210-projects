@@ -1,4 +1,11 @@
+// Patrick T. Edgett
+// CSE210 - Prog. W/ Classes
+// NOTE:
+    // Currently, all journals get saved in bin\Debug\net8.0.
+    // Not sure how to fix that atm....
 using System;
+
+
 
 class Program
 {
@@ -37,7 +44,7 @@ class Program
                 Console.WriteLine("[CLOSING program...]\n[Goodbye!]\n");
             }
         }
-        
+
 
     }
 }
