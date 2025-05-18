@@ -2,8 +2,19 @@ class Journal
 {
     // Copy of the filename used for the journal; Current Use Case Undecided.
     public string journalName;
-    // Stores a list of all entries from the journal. Taken from each line of the .txt file
+    // Stores a list of all entries from the journal(.txt)
     private List<Entry> Entries = new List<Entry>();
+    // Adds a given Entry object to the current Journal
+    public void AddEntry(Entry entry)
+    {
+        Entries.Add(entry);
+    }
+    // Retrieves list for use from the menu
+    public List<Entry> EntriesList
+    {
+        get { return Entries; }
+    }
+
 
 
     // Checks if the journal has a name, if it doesn't, prompts the user to create one
@@ -13,6 +24,8 @@ class Journal
         {
             Console.WriteLine("Please give your Journal a name: ");
             journalName = Console.ReadLine() + ".txt";
+
+            Console.WriteLine($"[Journal Created: {journalName}]");
 
             // This will create the file if it doesn't exist, or overwrite if it does
             using (FileStream fs = File.Create(journalName))
@@ -30,30 +43,28 @@ class Journal
         AddEntry(newEntry);             // Add it to the Entries list
     }
 
-    public void AddEntry(Entry entry)
-    {
-        Entries.Add(entry);
-    }
-
-    public List<Entry> EntriesList
-    {
-        get { return Entries; }
-    }
-
+    // Saves entries in Entries<> to a given filename
     public void SaveEntry(string filename, List<Entry> entries)
     {
         // Saves the current entry into the list of entries
         // Takes Entry (obj.) and takes {date}#{prompt}#{response} as a single string and adds it to the Journal's .txt file.
-
-        using (StreamWriter outputfile = new StreamWriter(filename))
+        if (Entries.Count != 0)
         {
-            foreach (Entry entry in entries)
+            using (StreamWriter outputfile = new StreamWriter(filename))
             {
-                outputfile.WriteLine(entry.convertEntryString());
+                foreach (Entry entry in entries)
+                {
+                    outputfile.WriteLine(entry.convertEntryString());
+                }
             }
+        }
+        else
+        {
+            Console.WriteLine("[NO Entries. SAVE Failed.]");
         }
     }
 
+    // Loads a journal from a .txt; converts it into Entry format, and adds it to the current journal.
     public void LoadJournal(string filename)
     {
         // Takes a given {name}.txt file and breaks it down line by line into multiple Entry (obj.) by breaking each line down.

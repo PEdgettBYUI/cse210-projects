@@ -16,7 +16,6 @@ class Program
         Journal jtest = new Journal();
         Entry test = new Entry();  // TEST Entry
 
-
         // Initialize variables for Main
         int userChoice = 0;
 

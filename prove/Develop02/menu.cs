@@ -14,6 +14,7 @@ class Menu
 
         switch (choice)
         {
+            // Create new entry
             case 1:
                 Console.WriteLine("[CREATING New Entry...]\n");
                 // Create new Entry & add it to the Entries List
@@ -23,6 +24,8 @@ class Menu
                 Console.WriteLine("   [ADDED entry to Journal]\n");
                 // aJournal.DisplayJournal(); //TESTING
                 break;
+
+            //Load an existing journal
             case 2:
                 Console.WriteLine("[LOADING Journal Entry...]\n");
 
@@ -34,6 +37,8 @@ class Menu
                 // Read from Journal.txt
                 aJournal.LoadJournal(filename);
                 break;
+
+            // Display the entire contents of the Journal in an attractive manner
             case 3:
                 // Display All Entries
                 Console.WriteLine("[DISPLAYING Journal...]\n");
@@ -43,8 +48,10 @@ class Menu
 
                 Console.WriteLine("\n\n");
                 break;
+
+            // Saves the current entries in the journal to a file
             case 4:
-                Console.WriteLine("[SAVING Current Entry...]\n");
+                Console.WriteLine("[SAVING Current Journal to file...]\n");
                 // Get filename of journal.txt
                 aJournal.nameJournal();
                 getJournalName = aJournal.journalName;
@@ -52,10 +59,14 @@ class Menu
                 // write journal with new entries to .txt file
                 aJournal.SaveEntry(getJournalName, getEntries);
                 break;
+
+            // Triggers the EXIT command.
+            // If there is any entries in the current journal, saves before quitting
             case 5:
                 Console.WriteLine("[EXITING...]");
                 // Checks if file has been saved, then does same as case 4 before quitting
                 goto case 4;
+
             default:
                 // Invalid Input Case 
                 Console.WriteLine("[INVALID Input! Please put in a Valid Entry.]\n");
