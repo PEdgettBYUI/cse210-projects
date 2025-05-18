@@ -32,6 +32,10 @@ class Program
             }
 
             mainMenu.parseUserChoice(userChoice, test, jtest);
+            if (userChoice == 5)
+            {
+                Console.WriteLine("[CLOSING program...]\n[Goodbye!]\n");
+            }
         }
         
 

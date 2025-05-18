@@ -59,6 +59,7 @@ class Entry
     // Where the User records their Entry Response
     public void recordResponse()
     {
+        Console.Write("> ");
         _response = Console.ReadLine();
     }
 

@@ -6,6 +6,22 @@ class Journal
     private List<Entry> Entries = new List<Entry>();
 
 
+    // Checks if the journal has a name, if it doesn't, prompts the user to create one
+    public void nameJournal()
+    {
+        if (string.IsNullOrEmpty(journalName))
+        {
+            Console.WriteLine("Please give your Journal a name: ");
+            journalName = Console.ReadLine() + ".txt";
+
+            // This will create the file if it doesn't exist, or overwrite if it does
+            using (FileStream fs = File.Create(journalName))
+            {
+
+            }
+        }
+    }
+
     // Create a new Entry and Add it to list<>Entries
     public void CreateAndAddEntry()
     {
@@ -18,6 +34,12 @@ class Journal
     {
         Entries.Add(entry);
     }
+
+    public List<Entry> EntriesList
+    {
+        get { return Entries; }
+    }
+
     public void SaveEntry(string filename, List<Entry> entries)
     {
         // Saves the current entry into the list of entries
@@ -49,11 +71,24 @@ class Journal
             entry.EntryFromFile(date, question, entryText);
             this.AddEntry(entry);
         }
+        journalName = filename;
+        Console.WriteLine("[LOAD complete!]\n");
     }
 
     // Displays all entries in the current Journal
     public void DisplayJournal()
     {
+        // Displays File Name, as a reminder to the user
+        if (string.IsNullOrEmpty(journalName))
+        {
+            Console.WriteLine("[NO NAME] Journal");
+        }
+        else
+        {
+            Console.WriteLine($"Journal: {journalName}\n\n");
+        }
+
+        // Displays every entry in an appealing format
         foreach (Entry item in Entries)
         {
             string EntryString = item.convertEntryString();
