@@ -1,4 +1,11 @@
+// Patrick T. Edgett
+// CSE210 - Prog. W/ Classes
+// NOTE:
+    // Currently, all journals get saved in bin\Debug\net8.0.
+    // Not sure how to fix that atm....
 using System;
+
+
 
 class Program
 {
@@ -8,7 +15,6 @@ class Program
         Menu mainMenu = new Menu();
         Journal jtest = new Journal();
         Entry test = new Entry();  // TEST Entry
-
 
         // Initialize variables for Main
         int userChoice = 0;
@@ -32,8 +38,12 @@ class Program
             }
 
             mainMenu.parseUserChoice(userChoice, test, jtest);
+            if (userChoice == 5)
+            {
+                Console.WriteLine("[CLOSING program...]\n[Goodbye!]\n");
+            }
         }
-        
+
 
     }
 }
