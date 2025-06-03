@@ -17,7 +17,7 @@ class Word
         return _hidden;
     }
 
-    public void SetIsHidden(bool hidden)
+    public void ToggleIsHidden(bool hidden)
     {
         if (hidden == true)
             _hidden = false;
@@ -25,6 +25,7 @@ class Word
             _hidden = true;
     }
 
+    // 
     public string GetWordString()
     {
         return _word;
@@ -32,7 +33,16 @@ class Word
 
     public void DisplayWord()
     {
-        Console.WriteLine(_word);
+        int wordlength = GetWordLength();
+
+        if (_hidden == true)
+        {
+            Console.Write(new string('_', wordlength));
+        }
+        else
+        {
+            Console.Write(_word);
+        }
     }
 
     private int GetWordLength()
