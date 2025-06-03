@@ -53,6 +53,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "sandbox\Sandbox\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordcounter", "Wordcounter\Wordcounter.csproj", "{1022D1D9-C872-46A7-8AC3-CF7C786FD07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{882577F1-7D90-44A0-B278-1BC8E9B921CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{1022D1D9-C872-46A7-8AC3-CF7C786FD07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1022D1D9-C872-46A7-8AC3-CF7C786FD07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1022D1D9-C872-46A7-8AC3-CF7C786FD07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882577F1-7D90-44A0-B278-1BC8E9B921CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882577F1-7D90-44A0-B278-1BC8E9B921CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882577F1-7D90-44A0-B278-1BC8E9B921CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882577F1-7D90-44A0-B278-1BC8E9B921CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,18 +20,28 @@ class WordCounter
             _words.Add(word);
             count++;
         }
-    }
+    } 
 
     public void DisplayWords()
     {
         foreach (string word in _words)
         {
-            Console.WriteLine(word);
+            Console.WriteLine($"   {word}");
         }
 
-        Console.WriteLine($"\n   There are {count} words.\n");
-
+        Console.WriteLine($"\nThere are {count} words.\n");
     }
 
+    public int CountSingleWord(string searchWord)
+    {
+        int count = 0;
 
+        foreach (string word in _words)
+        {
+            if (word == searchWord) // NOTE: You can ignore adding the {} around the code in an if/else IF the output is only ONE STATEMENT (;)
+                count++;
+        }
+
+        return count;
+    }
 }
