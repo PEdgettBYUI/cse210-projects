@@ -8,7 +8,7 @@
         Console.WriteLine(myDude.GetPersonInformation());
 
         PoliceMan myPig = new PoliceMan("Bullet", "Smelly", 50, ".22 Pistol");
-        Console.WriteLine(myPig.GetPersonInformation());
+        Console.WriteLine(myPig.GetPolicemanInformation());
 
     }
 }

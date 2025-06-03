@@ -10,7 +10,10 @@ class PoliceMan : Person
 
         public string GetPolicemanInformation()
     {
-        return $", Uses: {_weapons}";
+        string temp = GetPersonInformation() + $", Uses: {_weapons}";
+
+
+        return temp;
     }
 
 }
