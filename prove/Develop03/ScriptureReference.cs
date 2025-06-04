@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 class ScriptureReference
 {
     private string _bookName;
@@ -23,16 +25,26 @@ class ScriptureReference
 
     public void ShowScriptureReference()
     {
+        Console.Write($"{_bookName} {_chapter}:");
 
+        if (_verse.Length == 1)
+        {
+            Console.Write($"{_verse[0]}");
+        }
+        else if (_verse.Length == 2)
+        {
+            Console.Write($"{_verse[0]} - {_verse[1]}");
+        }
     }
 
     public string GetScriptureReference()
     {
-
+        return GetScriptureReferenceString();
     }
 
     private string GetScriptureReferenceString()
     {
+        string UH = $"{_bookName} {_chapter} {_verse}";
 
     }
 }

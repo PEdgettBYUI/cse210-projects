@@ -41,7 +41,7 @@ class Word
         }
         else
         {
-            Console.Write(_word);
+            Console.Write($"{_word} ");
         }
     }
 
