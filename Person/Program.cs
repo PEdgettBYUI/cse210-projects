@@ -10,5 +10,8 @@
         PoliceMan myPig = new PoliceMan("Bullet", "Smelly", 50, ".22 Pistol");
         Console.WriteLine(myPig.GetPolicemanInformation());
 
+        Doctor myDoc = new Doctor("Bob", "Payne", 35, "Scalpel");
+        Console.WriteLine(myDoc.GetDoctorInformation());
+
     }
 }
