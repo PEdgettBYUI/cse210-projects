@@ -17,9 +17,8 @@ class Program
             {
                 // Breathing
                 case 1:
-                    Activity TEST = new Activity("Breathing", "This a is a description of the activity you are viewing. WHEEEEE");
-                    TEST.DisplayWelcome();
-                    TEST.DisplayEndMessage();
+                    BreathingActivity TEST = new BreathingActivity("Breathing", "This a is a description of the activity you are viewing. WHEEEEE");
+                    TEST.RunBreathingActivity();
                     break;
                 // Reflecting
                 case 2:
