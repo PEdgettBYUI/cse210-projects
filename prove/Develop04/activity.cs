@@ -29,16 +29,13 @@ class Activity
 
     public void RunTimer(string message, int duration)
     {
-        // Demo of Decrementing Countdown
-        int count = duration;
-
-        Console.Write($"{message} ");
-        while (count > 0)
+        for (int count = duration; count > 0; count--)
         {
-            Console.Write(count--);
+            Console.Write($"\r{message} {count,3}");    // Right-align in 3 spaces
             Thread.Sleep(1000);
-            Console.Write("\b");
+            // count--;
         }
+        Console.WriteLine();
     }
 
     public void ObtainDurationFromUser()
@@ -49,19 +46,20 @@ class Activity
 
     public void SetEndTime()
     {
-        DateTime currentTime = DateTime.Now;    // Unnecessary??
-        _endTime = currentTime.AddSeconds(_duration);
+        // DateTime currentTime = DateTime.Now;    // Unnecessary??
+        _endTime = DateTime.Now.AddSeconds(_duration);
     }
 
-        public bool HasTimerExpired()
+    public bool HasTimerExpired()
     {
         return DateTime.Now > _endTime;
     }
 
     public void DominoAnimation()
     {
+        // Lasts about 4.8s @ sleepTime = 200, count = 6
         int sleepTime = 200;
-        int count = 7;
+        int count = 6;
 
         // Simple "Domino" Loading Animation
         while (count > 0)
