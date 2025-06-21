@@ -18,8 +18,8 @@ class Activity
 
     public void DisplayWelcome()
     {
-        Console.WriteLine($"Welcome to the {_name} Activity.");
-        Console.WriteLine(_description);
+        Console.WriteLine($"Welcome to the {_name} Activity.\n");
+        Console.WriteLine($"{_description}\n");
     }
 
     public void DisplayEndMessage()
@@ -33,7 +33,6 @@ class Activity
         {
             Console.Write($"\r{message} {count,3}");    // Right-align in 3 spaces
             Thread.Sleep(1000);
-            // count--;
         }
         Console.WriteLine();
     }

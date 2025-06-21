@@ -10,16 +10,16 @@ class BreathingActivity : Activity
         // Intro & set Duration
         DisplayWelcome();
         ObtainDurationFromUser();
+        Console.Clear();
         RunTimer("Get Ready... ", 3);
+        Console.WriteLine();
         SetEndTime();
 
         // Breath in/out
         while (!HasTimerExpired())
         {
-            RunTimer("\nBreath in...", 6);
-            // DominoAnimation();
-            RunTimer("\nBreath out...", 4);
-            // DominoAnimation();
+            RunTimer("> Breath in...", 4);
+            RunTimer("> Breath out...", 6);
         }
         DisplayEndMessage();
         DominoAnimation();

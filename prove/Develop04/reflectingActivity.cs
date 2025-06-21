@@ -50,6 +50,7 @@ class ReflectingActivity : Activity
         // Intro & Set Duration
         DisplayWelcome();
         ObtainDurationFromUser();
+        Console.Clear();
 
         // Display Prompt; wait for user input
         Console.WriteLine($"\nConsider the Following Prompt:\n");
@@ -61,11 +62,13 @@ class ReflectingActivity : Activity
         Console.WriteLine("Now, Ponder on each of the following questions as they related to this experience.");
         RunTimer("Get Ready... ", 5);
         SetEndTime();
+        Console.Clear();
 
         // Display random question 
         while (!HasTimerExpired())
         {
-            RunTimer($"\n{_question}", 9);
+            Console.Write($"\n> {_question}");
+            DominoAnimation();
             SetRandQuestion();
         }
 
