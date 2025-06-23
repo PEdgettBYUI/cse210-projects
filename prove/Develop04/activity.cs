@@ -56,11 +56,11 @@ class Activity
 
     public void DominoAnimation()
     {
-        // Lasts about 4.8s @ sleepTime = 200, count = 6
-        int sleepTime = 200;
+        // Lasts about ~7s @ sleepTime = 200, count = 6
+        int sleepTime = 250;
         int count = 6;
 
-        // Simple "Domino" Loading Animation
+        // Simple "Domino" Loading Animation 2 dominos per count
         while (count > 0)
         {
             Console.Write("|");
@@ -71,10 +71,16 @@ class Activity
             Console.Write("\b");
             Console.Write("_");
             Thread.Sleep(sleepTime);
-            // Console.Write("\b");
             Console.Write("\\");
             Thread.Sleep(sleepTime);
             Console.Write("\b");
+            Console.Write("|");
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+            Console.Write("/");
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+            Console.Write("_");
             count--;
         }
     }
