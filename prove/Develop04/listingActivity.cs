@@ -52,9 +52,14 @@ class ListingActivity : Activity
         // Checks if the timer has expired after listing an item
         while (!HasTimerExpired())
         {
-            Console.Write("> ");
-            Console.ReadLine();
-            _count++;
+            string input = "";
+            while (string.IsNullOrWhiteSpace(input) && !HasTimerExpired())
+            {
+                Console.Write("> ");
+                input = Console.ReadLine();
+            }
+            if (!HasTimerExpired()) // Only increment if time remains
+                _count++;
         }
 
         // End Activity
